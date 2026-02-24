@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title> Site de Rose </title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+<body>
+    <div id="entete-de-page"> 
+        <p> Site de Rose </p>
+    </div> 
+    
+    <table id="bloc-menu" border="1">
+    <tr>
+        <th><a href="index.html"> Accueil </a></th>
+        <th><a href="productions.html">Productions scolaires</a></th>
+        <th><a href="passions.html">Mes passions</a></th>
+        <th><a href="videos.html">Mes vidéos</a></th>
+        <th><a href="site.html">Mon site de rêve</a></th>
+    </tr>
+    </table> <br/> 
+    
+    <div id="contenu">
+        <div class="presentation">
+   <img src="avatar.jpg" alt="ceci est mon avatar" class="arrondie" style="width:150px;">
+
+            <div class="texte-presentation">
+                <h2>Je me présente...</h2>
+                <p>Bonjour Je m'appelle Rose, j'ai 15 ans et je suis élève au Lycée Sacré-Cœur .</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div>
+
+    <hr>
+    <div>
+        
+        <audio id="zic" src="musique.mp3"></audio>
+        
+        <div id="lecteur">
+            <a href="javascript:void(0)" onclick="changeState(0)" class="bouton">PLAY</a>
+            <a href="javascript:void(0)" onclick="changeState(1)" class="bouton">PAUSE</a>
+            <a href="javascript:void(0)" onclick="changeState(2)" class="bouton">STOP</a>
+        </div>
+    </div>
+</div>
+
+    <script>
+        function changeState(x){
+            let boutons = document.querySelectorAll(".bouton");
+            let audio = document.querySelector("#zic");
+            for(let i = 0; i < boutons.length; i++){
+                boutons[i].classList.remove("active");
+            }
+            boutons[x].classList.add("active");
+            if(x == 0) audio.play();
+            if(x == 1) audio.pause();
+            if(x == 2) {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        }
+    </script>
+</body>
+</html>
